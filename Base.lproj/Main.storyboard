@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Upload_to_AWSS3_Bucket" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="su4-2F-ITe">
+                                <rect key="frame" x="20" y="460" width="374" height="259"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6XT-CQ-2hT">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Select images to upload"/>
+                                        <connections>
+                                            <action selector="selectImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y9i-lK-X7y"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K51-yF-w5S">
+                                        <rect key="frame" x="0.0" y="76" width="374" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Upload Now"/>
+                                        <connections>
+                                            <action selector="Upload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ft5-Vs-OU8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cz-DO-Z0B">
+                                        <rect key="frame" x="0.0" y="152" width="374" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Pause uploading"/>
+                                        <connections>
+                                            <action selector="suspendButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eut-wV-9mu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TM4-f9-tYY">
+                                        <rect key="frame" x="0.0" y="228" width="374" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Resume uploading"/>
+                                        <connections>
+                                            <action selector="resume:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X7v-QC-cp7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXM-uC-Kfq">
+                                <rect key="frame" x="20" y="82" width="374" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="Q8K-MN-Z8t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wXr-ce-y4k">
+                                <rect key="frame" x="20" y="63" width="374" height="4"/>
+                            </progressView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JZg-hW-cha">
+                                <rect key="frame" x="9" y="172" width="396" height="239"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="su4-2F-ITe" secondAttribute="trailing" constant="20" id="0lJ-P8-jMS"/>
+                            <constraint firstItem="gXM-uC-Kfq" firstAttribute="top" secondItem="wXr-ce-y4k" secondAttribute="bottom" constant="15" id="3mG-AZ-mVh"/>
+                            <constraint firstItem="su4-2F-ITe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4Ty-o3-oRL"/>
+                            <constraint firstItem="su4-2F-ITe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="50i-bT-V6g"/>
+                            <constraint firstItem="gXM-uC-Kfq" firstAttribute="leading" secondItem="wXr-ce-y4k" secondAttribute="leading" id="5Rf-R1-f7n"/>
+                            <constraint firstItem="JZg-hW-cha" firstAttribute="top" secondItem="gXM-uC-Kfq" secondAttribute="bottom" constant="32" id="8Th-LF-KNk"/>
+                            <constraint firstItem="gXM-uC-Kfq" firstAttribute="trailing" secondItem="su4-2F-ITe" secondAttribute="trailing" id="Kah-BO-ah1"/>
+                            <constraint firstItem="JZg-hW-cha" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OGK-Jf-j5x"/>
+                            <constraint firstItem="su4-2F-ITe" firstAttribute="top" secondItem="JZg-hW-cha" secondAttribute="bottom" constant="49" id="ObO-PW-BJb"/>
+                            <constraint firstItem="su4-2F-ITe" firstAttribute="top" secondItem="JZg-hW-cha" secondAttribute="bottom" constant="49" id="PGj-9s-Moz"/>
+                            <constraint firstItem="JZg-hW-cha" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="YBg-gY-7v0"/>
+                            <constraint firstItem="gXM-uC-Kfq" firstAttribute="trailing" secondItem="wXr-ce-y4k" secondAttribute="trailing" id="bAi-lW-Elc"/>
+                            <constraint firstItem="gXM-uC-Kfq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="82" id="oTa-3y-FUJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="su4-2F-ITe" secondAttribute="bottom" constant="143" id="s1g-Zh-Hsr"/>
+                            <constraint firstItem="gXM-uC-Kfq" firstAttribute="leading" secondItem="su4-2F-ITe" secondAttribute="leading" id="xQM-4p-WoE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="progressView" destination="wXr-ce-y4k" id="saI-pg-U3d"/>
+                        <outlet property="statusLabel" destination="gXM-uC-Kfq" id="UUZ-Ew-yjL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="97.767857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
